@@ -7,7 +7,7 @@ class Board {
     private Knight knight;
     private int counter = 0;
 
-    Board(int size) throws MoveBackException {
+    Board(int size) {
         this.size = size;
         board = new int[size][size];
         for (int i = 0; i < size ; i++ ) {
@@ -29,7 +29,7 @@ class Board {
         return new int[] {rnd.nextInt(size), rnd.nextInt(size)};
     }
 
-    private void moveKnight() throws MoveBackException {
+    private void moveKnight() {
         int[] pos = new int[2];
         do {
             try {
@@ -78,7 +78,7 @@ class Board {
         return s.toString();
     }
 
-    public static void main (String[] args) throws MoveBackException {
+    public static void main (String[] args) {
         Board b = new Board(Integer.parseInt(args[0]));
     }
 }

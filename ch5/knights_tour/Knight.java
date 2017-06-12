@@ -1,6 +1,6 @@
 class MoveFailedException extends Exception { }
 
-class MoveBackException extends Exception {
+class MoveBackException extends RuntimeException {
     public MoveBackException(String message) {
         super("start from " + message + " can not visit every square.");
     }
@@ -32,7 +32,7 @@ public class Knight {
         return new int[] {newPosX, newPosY};
     }
 
-    public int[] moveBack() throws MoveBackException {
+    public int[] moveBack() {
         int[] pos = new int[] {this.posX, this.posY};
 
         if (counter == 0) {
