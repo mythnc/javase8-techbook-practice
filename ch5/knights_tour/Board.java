@@ -40,14 +40,14 @@ class Board {
                 counter--;
                 return;
             }
-        } while(isValidMove(pos));
+        } while(!isValidMove(pos));
         
         knight.move(pos);
         board[pos[1]][pos[0]] = ++counter;
     }
 
     private boolean isValidMove(int[] pos) {
-        return !(pos[0] >= 0 && pos[0] < size
+        return (pos[0] >= 0 && pos[0] < size
                 && pos[1] >= 0 && pos[1] < size
                 && board[pos[1]][pos[0]] == 0);
     }
